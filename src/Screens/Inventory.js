@@ -13,9 +13,10 @@ const Inventory = () => {
     precio: "",
     SKU: "",
     img: "",
+    disponible: "",
   });
   const [loading, setLoading] = useState(false);
-  const { titulo, autor, sin, precio, SKU, img } = form;
+  const { titulo, autor, sin, precio, SKU, img, disponible } = form;
   const inputChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -28,7 +29,7 @@ const Inventory = () => {
     } catch (e) {
       alert(e.message);
     }
-    setForm({ titulo: "", autor: "", sin: "", precio: "", SKU: "", img: "" });
+    setForm({ titulo: "", autor: "", sin: "", precio: "", SKU: "", img: "" , disponible:""});
     setLoading(false);
   };
   const logOut = () => {
@@ -85,6 +86,16 @@ const Inventory = () => {
           label="SKU"
           name="SKU"
           value={SKU}
+          type="text"
+          variant="standard"
+          required
+          className="fields"
+          onChange={inputChange}
+        />
+        <TextField
+          label="Stock"
+          name="disponible"
+          value={disponible}
           type="text"
           variant="standard"
           required
