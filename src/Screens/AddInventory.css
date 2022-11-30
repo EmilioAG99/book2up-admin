@@ -1,0 +1,12 @@
+.inventory{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.inventory .fields{
+    margin-top:10px
+}
+.inventory .submit{
+    margin-top:10px
+}

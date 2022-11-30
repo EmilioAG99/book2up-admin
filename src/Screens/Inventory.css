@@ -1,12 +1,16 @@
-.inventory{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+.safe-area{
+    width: 100%;
 }
-.inventory .fields{
-    margin-top:10px
+.table-area{
+    width: 100%;
+    margin:10px 10px 10px;
 }
-.inventory .submit{
-    margin-top:10px
+.area-botones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.botones{
+    cursor: pointer;
+    margin: 0 3px;
 }

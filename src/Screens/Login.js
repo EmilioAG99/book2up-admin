@@ -3,10 +3,12 @@ import TextField from "@mui/material/TextField";
 import instance from '../api/bookApi'
 import store from '../store/store'
 import { setToken } from '../store/Slices/authSlice'
+import { useNavigate } from 'react-router-dom';
 import "./Login.css";
 const Login = () => {
   const [form,setForm] = useState({user:'', password:''})
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate();
   const {user, password} = form
   const updateFields=(e)=>{
     const {name,value} = e.target
@@ -17,6 +19,7 @@ const Login = () => {
     try{
       const response = await instance.post('/validarAdmin',form);
       store.dispatch(setToken(response.data))
+      navigate('/')
     }
     catch(e){
       alert(e.message)
